@@ -9,17 +9,17 @@ const softwareItems = [
     {
         title: '元镜视界实验室',
         description: 'AI 影视技术研发与成果转化的载体.',
-        icon: '/src/assets/home/software1.png'
+        icon: '/images/home/software1.png'
     },
     {
         title: '元镜视界教育',
         description: 'AI影视产业专业人才孵化',
-        icon: '/src/assets/home/software2.png'
+        icon: '/images/home/software2.png'
     },
     {
         title: 'AI情感分析',
         description: '消费者情绪数据分析',
-        icon: '/src/assets/home/software3.png'
+        icon: '/images/home/software3.png'
     }
 ];
 const modules = [
@@ -120,7 +120,7 @@ export default function MegaMenu() {
                                     <div
                                         className="w-8 h-8 rounded-lg flex items-center justify-center "
                                         style={{ backgroundColor: mod.color }}>
-                                        <img src={`/src/assets/home/icon/${idx + 1}.png`} alt={mod.name} className="w-5 h-5 object-contain brightness-0 invert transition-transform group-hover:scale-130 " />
+                                        <img src={`/images/home/icon/${idx + 1}.png`} alt={mod.name} className="w-5 h-5 object-contain brightness-0 invert transition-transform group-hover:scale-130 " />
                                     </div>
                                     <span>{mod.name}</span>
                                 </a>

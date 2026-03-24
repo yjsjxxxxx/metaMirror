@@ -1,26 +1,20 @@
-import React from 'react';
-import Hero from '../components/Home/Hero';
-import Intro from '../components/Home/Intro';
-import VideoSection from '../components/Home/VideoSection';
-import SoftwareSection from '../components/Home/SoftwareSection';
-import ModulesSection from '../components/Home/ModulesSection';
-import LogosSection from '../components/Home/LogosSection';
-import HardwareSection from '../components/Home/HardwareSection';
-import SolutionsSection from '../components/Home/SolutionsSection';
-import NewsSection from '../components/Home/NewsSection';
+import './home.css';
+import ClawEngine from '../components/Home/Engine';
+import ClawCine from '../components/Home/Cine';
+import ClawClawIcon from '../components/Home/ClawIcon';
+import ClawProduct from '../components/Home/Product';
+import ClawSolution from '../components/Home/Solution';
+import ClawHeroCarousel from '../components/Home/HeroCarousel';
 
 export default function HomePage() {
   return (
-    <>
-      <Hero />
-      <Intro />
-      <VideoSection />
-      <SoftwareSection />
-      <ModulesSection />
-      <LogosSection />
-      <HardwareSection />
-      <NewsSection />
-      <SolutionsSection />
-    </>
+    <div className="meta-mirror-home">
+      <ClawHeroCarousel />
+      <ClawEngine />
+      <ClawClawIcon/>
+      <ClawCine/>
+      <ClawProduct/>
+      <ClawSolution/> 
+    </div>
   );
 }

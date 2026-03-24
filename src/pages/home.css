@@ -1,0 +1,178 @@
+.meta-mirror-home {
+    --bg-white: #ffffff;
+    --bg-light: #f7f9fa;         
+    --bg-blue-tint: #f2fbfa;     
+    --bg-footer-dark: #041627;   
+    
+    --theme-blue: #0aa5d9;       
+    --theme-green: #41b586;
+    --theme-gradient: linear-gradient(135deg, #0aa5d9 0%, #41b586 100%);
+    
+    --text-dark: #1a1a1a;
+    --text-body: #4a5568;
+    --text-muted: #828282;
+    
+    --border-light: #e2e8f0;
+    --shadow-hover: 0 15px 40px rgba(65, 181, 134, 0.15);
+    
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    background-color: var(--bg-white);
+    color: var(--text-body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.meta-mirror-home * {
+    box-sizing: border-box;
+}
+
+.meta-mirror-home .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+/* 文字渐变特效 */
+.meta-mirror-home .gradient-text {
+    background: var(--theme-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* 标题体系 */
+.meta-mirror-home .section-header { text-align: left; margin-bottom: 60px; }
+.meta-mirror-home .section-title { font-size: 2.2rem; color: var(--text-dark); font-weight: 600; margin-bottom: 12px; }
+.meta-mirror-home .section-subtitle { font-size: 1.1rem; color: var(--text-muted); }
+.meta-mirror-home .dot-accent { 
+    background: var(--theme-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.meta-mirror-home .section-action { text-align: center; margin-top: 50px; }
+
+/* 通用按钮样式 */
+.meta-mirror-home .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 36px; font-size: 1rem; font-weight: 500; letter-spacing: 1px;
+    text-decoration: none; border-radius: 4px;
+    transition: var(--transition); cursor: pointer;
+    border: none;
+}
+
+.meta-mirror-home .btn-primary { background: var(--theme-gradient); color: #fff; }
+.meta-mirror-home .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(65, 181, 134, 0.3); }
+
+.meta-mirror-home .btn-outline { 
+    position: relative;
+    background: transparent; color: var(--theme-blue); 
+    border: 1px solid var(--theme-blue); z-index: 1; overflow: hidden;
+}
+.meta-mirror-home .btn-outline::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--theme-gradient); z-index: -1;
+    opacity: 0; transition: var(--transition);
+}
+.meta-mirror-home .btn-outline:hover { color: #fff; border-color: transparent; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(10, 165, 217, 0.2); }
+.meta-mirror-home .btn-outline:hover::before { opacity: 1; }
+
+/* ================= 1. 首屏轮播 ================= */
+.meta-mirror-home .hero-carousel { position: relative; width: 100%; height: 100vh; overflow: hidden; background: var(--text-dark); }
+.meta-mirror-home .slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; transition: opacity 1s ease-in-out;
+    display: flex; flex-direction: column; justify-content: center; padding-left: 10%;
+    background-size: cover; background-position: center;
+    z-index: 0;
+}
+  .slide::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%); z-index: 1; }
+  .slide.active { opacity: 1; z-index: 2; }
+
+.meta-mirror-home .slide-content { position: relative; z-index: 3; max-width: 600px; color: #fff; transform: translateY(20px); transition: all 1s ease; }
+.meta-mirror-home .slide.active .slide-content { transform: translateY(0); }
+.meta-mirror-home .slide h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; color: #fff; }
+.meta-mirror-home .slide p { font-size: 1.2rem; margin-bottom: 40px; color: #e2e8f0; }
+
+.meta-mirror-home .carousel-dots { position: absolute; bottom: 40px; left: 10%; z-index: 3; display: flex; gap: 12px; }
+.meta-mirror-home .dot { width: 60px; height: 4px; background: rgba(255,255,255,0.3); cursor: pointer; transition: var(--transition); }
+.meta-mirror-home .dot.active { background: var(--theme-gradient); width: 60px; }
+
+/* ================= 2. AI 引擎 ================= */
+.meta-mirror-home .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.meta-mirror-home .white-card {
+    background: var(--bg-white); border: 1px solid var(--border-light);
+    padding: 40px 30px; border-radius: 8px; transition: var(--transition);
+}
+.meta-mirror-home .white-card:hover { border-color: var(--theme-green); box-shadow: var(--shadow-hover); transform: translateY(-5px); }
+.meta-mirror-home .card-num { font-size: 0.9rem; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+.meta-mirror-home .card-title { font-size: 1.5rem; color: var(--text-dark); margin-bottom: 12px; }
+.meta-mirror-home .card-desc { color: var(--text-body); font-size: 0.95rem; margin-bottom: 0; }
+
+.meta-mirror-home .hover-expand { max-height: 0; opacity: 0; overflow: hidden; transition: var(--transition); font-size: 0.9rem; border-top: 1px solid var(--border-light); }
+.meta-mirror-home .white-card:hover .hover-expand { max-height: 200px; opacity: 1; margin-top: 20px; padding-top: 20px; }
+
+/* ================= 3. Cine 评测系统 ================= */
+.meta-mirror-home .bg-gray-section { background-color: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+.meta-mirror-home .cine-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--border-light); border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; }
+.meta-mirror-home .cine-box { background: var(--bg-white); padding: 60px 40px; text-align: center; transition: var(--transition); }
+.meta-mirror-home .cine-box:hover { background: var(--theme-gradient); color: #fff; }
+.meta-mirror-home .cine-box:hover .card-title, .meta-mirror-home .cine-box:hover .card-desc { color: #fff; }
+
+/* ================= 4. 元镜Claw & 角色专属配置列 ================= */
+.meta-mirror-home .claw-section { background-color: var(--bg-blue-tint); overflow: hidden; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+.meta-mirror-home .claw-layout { display: flex; align-items: center; gap: 60px; }
+
+.meta-mirror-home .claw-intro { flex: 1.1; display: flex; flex-direction: column; justify-content: center; }
+.meta-mirror-home .claw-intro h2 { font-size: 4.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 10px; letter-spacing: 2px; }
+.meta-mirror-home .claw-intro h3 { font-size: 1.8rem; color: var(--text-dark); font-weight: 600; margin-bottom: 24px; }
+.meta-mirror-home .claw-intro p { font-size: 1.15rem; color: var(--text-body); margin-bottom: 30px; line-height: 1.8; }
+
+/* 新增：6大岗位专属配置图标排版 */
+.meta-mirror-home .claw-roles-list { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 30px; border-top: 1px solid rgba(10, 165, 217, 0.1); }
+.meta-mirror-home .role-item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+.meta-mirror-home .role-icon { width: 32px; height: 32px; margin-bottom: 12px; }
+.meta-mirror-home .role-icon svg { width: 100%; height: 100%; fill: url(#icon-grad); transition: var(--transition); }
+.meta-mirror-home .role-item:hover .role-icon svg { transform: scale(1.15) translateY(-3px); }
+.meta-mirror-home .role-text { font-size: 0.85rem; color: var(--text-dark); font-weight: 600; line-height: 1.4; }
+
+.meta-mirror-home .claw-grid { flex: 0.9; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.meta-mirror-home .claw-feature-card { background: var(--bg-white); padding: 30px; border-radius: 8px; border: 1px solid var(--border-light); transition: var(--transition); }
+.meta-mirror-home .claw-feature-card:hover { border-color: var(--theme-blue); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.meta-mirror-home .claw-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+.meta-mirror-home .claw-feature-card h4 { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 8px; }
+.meta-mirror-home .claw-feature-card p { font-size: 0.9rem; color: var(--text-body); }
+
+/* ================= 5. 智能硬件 ================= */
+.meta-mirror-home .hw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.meta-mirror-home .hw-card { display: flex; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 8px; padding: 40px; transition: var(--transition); align-items: flex-start; gap: 24px;}
+.meta-mirror-home .hw-card:hover { border-color: var(--theme-green); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+
+.meta-mirror-home .hw-icon-box { min-width: 60px; height: 60px; background: linear-gradient(135deg, rgba(10,165,217,0.1) 0%, rgba(65,181,134,0.1) 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.8rem; }
+.meta-mirror-home .hw-card h3 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 10px; }
+.meta-mirror-home .hw-card h4 { font-size: 0.9rem; margin-bottom: 16px; font-weight: 600;}
+.meta-mirror-home .hw-card p { font-size: 0.95rem; color: var(--text-body); }
+
+/* ================= 6. 探索解决方案 ================= */
+.meta-mirror-home .solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.meta-mirror-home .solution-item { display: flex; align-items: flex-start; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid var(--border-light); }
+.meta-mirror-home .sol-icon { width: 50px; height: 50px; background: linear-gradient(135deg, rgba(10,165,217,0.1), rgba(65,181,134,0.1)); display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.5rem; }
+.meta-mirror-home .sol-text h3 { color: var(--text-dark); margin-bottom: 8px; }
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+    .meta-mirror-home .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .meta-mirror-home .cine-grid { grid-template-columns: repeat(2, 1fr); }
+    .meta-mirror-home .claw-layout { flex-direction: column; }
+    .meta-mirror-home .hw-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .meta-mirror-home .grid-3 { grid-template-columns: 1fr; }
+    .meta-mirror-home .cine-grid { grid-template-columns: 1fr; }
+    .meta-mirror-home .claw-grid { grid-template-columns: 1fr; }
+    .meta-mirror-home .solutions-grid { grid-template-columns: 1fr; }
+    .meta-mirror-home .slide h1 { font-size: 2.5rem; }
+}

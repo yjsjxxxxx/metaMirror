@@ -1,0 +1,154 @@
+.meta-mirror-engine {
+    --bg-white: #ffffff;
+    --bg-light: #f7f9fa;         
+    --bg-blue-tint: #f2fbfa;     
+    --bg-footer-dark: #041627;   
+    
+    --theme-blue: #0aa5d9;       
+    --theme-green: #41b586;
+    --theme-gradient: linear-gradient(135deg, #0aa5d9 0%, #41b586 100%);
+    
+    --text-dark: #1a1a1a;
+    --text-body: #4a5568;
+    --text-muted: #828282;
+    
+    --border-light: #e2e8f0;
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 15px 40px rgba(65, 181, 134, 0.15);
+    
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    background-color: var(--bg-white);
+    color: var(--text-body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.meta-mirror-engine * {
+    box-sizing: border-box;
+}
+
+.meta-mirror-engine .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+/* 渐变特效类 */
+.meta-mirror-engine .gradient-text {
+    background: var(--theme-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* 标题体系 */
+.meta-mirror-engine .section-header { text-align: center; margin-bottom: 80px; }
+.meta-mirror-engine .section-title { font-size: 2.5rem; color: var(--text-dark); font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;}
+.meta-mirror-engine .section-subtitle { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
+
+/* ================= 1. 子页 Hero Banner ================= */
+.meta-mirror-engine .subpage-hero {
+    background-color: var(--bg-blue-tint);
+    padding: 160px 20px 100px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+/* 背景光晕装饰 */
+.meta-mirror-engine .subpage-hero::before {
+    content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px; background: radial-gradient(circle, rgba(10,165,217,0.05) 0%, transparent 70%);
+    z-index: 0; pointer-events: none;
+}
+/* .meta-mirror-engine .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; } */
+.meta-mirror-engine .hero-content { 
+    position: relative; z-index: 2; max-width: 900px; margin: 0 auto; 
+    /* 入场动画 */
+    opacity: 0; transform: translateY(40px);
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+}
+.meta-mirror-engine .hero-tag { display: inline-block; font-size: 0.95rem; font-weight: 700; color: #fff; background: var(--theme-gradient); padding: 4px 16px; border-radius: 30px; letter-spacing: 2px; margin-bottom: 24px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(65, 181, 134, 0.4);}
+
+/* .meta-mirror-engine .hero-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; color: var(--theme-green); letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; } */
+.meta-mirror-engine .subpage-hero h1 { font-size: 4rem; font-weight: 800; color: var(--text-dark); margin-bottom: 24px; line-height: 1.2; }
+.meta-mirror-engine .subpage-hero p { font-size: 1.25rem; color: var(--text-body); line-height: 1.8; }
+
+/* ================= 2. 核心价值主张模块 ================= */
+.meta-mirror-engine .value-prop-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 60px;
+    margin: -60px auto 80px;
+    position: relative;
+    z-index: 10;
+    box-shadow: var(--shadow-card);
+    display: flex; gap: 40px; align-items: center;
+}
+.meta-mirror-engine .value-prop-card h3 { font-size: 1.8rem; color: var(--text-dark); margin-bottom: 16px; flex: 1;}
+.meta-mirror-engine .value-prop-card p { font-size: 1.05rem; color: var(--text-body); flex: 2; border-left: 2px solid var(--border-light); padding-left: 40px;}
+
+/* ================= 3. 核心功能区 (Z字交替排版) ================= */
+.meta-mirror-engine .feature-row {
+    display: flex; align-items: center; gap: 80px; margin-bottom: 120px;
+}
+.meta-mirror-engine .feature-row.reverse { flex-direction: row-reverse; }
+
+.meta-mirror-engine .feature-image {
+    flex: 1;
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+/* 模拟界面UI占位图 */
+.meta-mirror-engine .ui-mockup { width: 80%; height: 70%; background: var(--bg-white); border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;}
+.meta-mirror-engine .ui-header { height: 20px; background: var(--border-light); width: 100%; border-bottom: 1px solid var(--border-light);}
+.meta-mirror-engine .ui-body { flex: 1; display: flex; padding: 20px; gap: 10px;}
+.meta-mirror-engine .ui-sidebar { width: 30%; background: var(--bg-light); border-radius: 4px; }
+.meta-mirror-engine .ui-main { flex: 1; background: linear-gradient(135deg, rgba(10,165,217,0.05), rgba(65,181,134,0.05)); border-radius: 4px; display: flex; align-items: center; justify-content: center;}
+
+.meta-mirror-engine .feature-text { flex: 1; }
+.meta-mirror-engine .feature-label { display: inline-block; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; color: #fff; background: var(--theme-gradient); padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+.meta-mirror-engine .feature-text h2 { font-size: 2.2rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.3; }
+.meta-mirror-engine .feature-text p { font-size: 1.1rem; color: var(--text-body); margin-bottom: 30px; }
+
+/* 优势列表打钩样式 */
+.meta-mirror-engine .check-list { list-style: none; }
+.meta-mirror-engine .check-list li { position: relative; padding-left: 32px; margin-bottom: 16px; font-size: 1.05rem; color: var(--text-dark); font-weight: 500;}
+.meta-mirror-engine .check-list li::before {
+    content: '✓'; position: absolute; left: 0; top: 2px;
+    width: 20px; height: 20px; background: var(--theme-gradient); color: white;
+    border-radius: 50%; font-size: 0.75rem; display: flex; align-items: center; justify-content: center;
+    font-weight: bold;
+}
+.meta-mirror-engine .check-list p { font-size: 0.95rem; color: var(--text-body); font-weight: 400; margin-top: 4px; padding-left: 0; margin-bottom: 0;}
+
+/* ================= 4. 生态闭环 (四格网格) ================= */
+.meta-mirror-engine .loop-section { background-color: var(--bg-light); padding: 100px 0; border-top: 1px solid var(--border-light); }
+.meta-mirror-engine .loop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; }
+.meta-mirror-engine .loop-card { background: var(--bg-white); padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border-light); text-align: center; transition: var(--transition); }
+.meta-mirror-engine .loop-card:hover { border-color: var(--theme-green); transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.meta-mirror-engine .loop-icon { width: 64px; height: 64px; margin: 0 auto 20px; }
+.meta-mirror-engine .loop-icon svg { width: 100%; height: 100%; fill: url(#icon-grad); }
+.meta-mirror-engine .loop-card h4 { font-size: 1.3rem; color: var(--text-dark); margin-bottom: 12px; }
+.meta-mirror-engine .loop-card p { font-size: 0.95rem; color: var(--text-body); }
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+    .meta-mirror-engine .value-prop-card { flex-direction: column; gap: 20px; text-align: center; }
+    .meta-mirror-engine .value-prop-card p { border-left: none; border-top: 2px solid var(--border-light); padding-left: 0; padding-top: 20px; }
+    .meta-mirror-engine .feature-row, .meta-mirror-engine .feature-row.reverse { flex-direction: column; gap: 40px; }
+    .meta-mirror-engine .loop-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .meta-mirror-engine .subpage-hero h1 { font-size: 2.5rem; }
+    .meta-mirror-engine .loop-grid { grid-template-columns: 1fr; }
+}

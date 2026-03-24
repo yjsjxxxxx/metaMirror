@@ -25,7 +25,7 @@ export default function Header() {
       <div className="max-w-[1280px] mx-auto px-4 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <img
-            src="/src/assets/logo.png"
+            src="/images/logo.png"
             alt="iMotions"
             className="h-6 w-auto"
           />
