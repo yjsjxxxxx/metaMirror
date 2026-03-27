@@ -20,6 +20,7 @@ import PsychologyToolsPage from './pages/psychology-tools';
 import BusinessMarketingResearchPage from './pages/business-marketing-research';
 import SmartClassroomPage from './pages/smart-classroom'; 
 import EducationLabPage from './pages/education-lab'; 
+import Test from './pages/test';
 export default function App() {
   return (
     <Router>
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/business-marketing-research" element={<BusinessMarketingResearchPage />} />
             <Route path="/smart-classroom" element={<SmartClassroomPage />} />
             <Route path="/education-lab" element={<EducationLabPage />} />
+            <Route path="/test" element={<Test />} />
           </Routes>
         </main>
         <Footer />

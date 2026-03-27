@@ -11,7 +11,7 @@ View your app in AI Studio: https://ai.studio/apps/d7ecc122-f949-43a4-b54e-a573b
 ## Run Locally
 
 **Prerequisites:**  Node.js
-
+<!-- /opt/1panel/www/sites/metamirror.me/index -->
 
 1. Install dependencies:
    `npm install`

@@ -41,13 +41,13 @@ const CinePage: FC = () => {
       <div className="container">
         <FadeIn>
           <header className="section-header">
-               <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tighter leading-none">
+            <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tighter leading-none">
               元镜Cine评测系统
             </h3>
             <p className="section-subtitle">从"主观感受"到"数据指标"的市场风向标。</p>
           </header>
         </FadeIn>
-        
+
         <div className="cine-grid">
           {cineFeatures.map((feature, index) => (
             <CineFeature
@@ -58,7 +58,7 @@ const CinePage: FC = () => {
             />
           ))}
         </div>
-        
+
         <FadeIn delay={0.3}>
           <div className="section-action">
             <a href="/cine" className="btn btn-outline">
