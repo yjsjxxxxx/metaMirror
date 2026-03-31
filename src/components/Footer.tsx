@@ -3,7 +3,7 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="meta-mirror-footer">
+    <footer className="meta-mirror-footer pt-10">
       <div className="footer-dark">
         <div className="footer-dark-inner">
           <div>
